@@ -1,20 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package abstract_04;
 
-/**
- *
- * @author CG3038696
- */
-public class Abstract_04 {
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
+public class Abstract_04 {
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner teclado = new Scanner(System.in);
+        Conta c = new ContaCorrente();
+        
+        int opcao;
+        
+        do {
+            System.out.println("1 - Depositar");
+            System.out.println("2 - Sacar");
+            System.out.println("3 - Sair");
+            
+            opcao = teclado.nextInt();
+            switch(opcao){
+                case 1:
+                c.depositar();
+                break;      
+                
+                case 2:
+                c.sacar();
+                break;
+                
+                default:
+                    System.out.println("Escolha uma opcao valida");
+            }
+        } while (opcao != 3);
     }
     
 }
